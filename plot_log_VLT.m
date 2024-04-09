@@ -42,7 +42,7 @@ for i = 1:size(target_x_point)
     Y_C = [Y_C y_c];
 end
 
-figure(1);
+figure(1);%コースxy座標をプロット
 scatter(X_R, Y_R, 'red')
 hold on
 scatter(X_C, Y_C, 'blue')
