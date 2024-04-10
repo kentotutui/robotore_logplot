@@ -6,8 +6,12 @@
 基本的に、プロットには[plot_log_VLT.m](https://github.com/kentotutui/robotore_logplot/blob/master/plot_log_VLT.m)を使用します。
 
 このプログラムは、バーチャルライントレースをしている機体の状態を10mmごとにフラッシュに保存し、結果をグラフで出力しデバック作業に役立てます。
+
+目標経路とのずれ
 <img width="960" alt="コースずれ" src="https://github.com/kentotutui/robotore_logplot/assets/74086911/00bdd9ca-2592-4a9f-a779-e6b9a936ab09">
+速度・角速度のずれ
 <img width="960" alt="速度・角速度ずれ" src="https://github.com/kentotutui/robotore_logplot/assets/74086911/1b1a8cfe-ceb3-4d52-a595-8d8c9a5a3904">
+xy座標のError
 <img width="960" alt="xyError" src="https://github.com/kentotutui/robotore_logplot/assets/74086911/cba8b4db-4d5e-495e-8982-d9873fd87848">
 
 ### VLT_log.txt
