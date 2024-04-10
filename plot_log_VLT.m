@@ -54,7 +54,7 @@ grid minor
 axis equal
 legend('Target Point (red)', 'Current Point (blue)')
 
-figure(2);
+figure(2);%速度・角速度の差をプロット
 subplot(2, 1, 1)
 plot(target_velocity, 'color', 'red')
 hold on
@@ -72,7 +72,7 @@ grid on
 title('AngularVelocity(rad/s)')
 legend('Target Angularvelocity (red)', 'Current Angularvelocity (blue)')
 
-figure(3);
+figure(3);%Error分を出力
 subplot(2, 1, 1)
 plot(error_x)
 yline(0,"-r")

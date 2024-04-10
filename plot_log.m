@@ -20,8 +20,6 @@ for i = 1:size(distance)
     x = x + distance(i) * cos(th + theta_adj(i)/2);
     y = y + distance(i) * sin(th + theta_adj(i)/2);
     th = th + theta_adj(i);
-    %x = distance(i);
-    %y = theta(i);
     X = [X x];
     Y = [Y y];
 end
