@@ -77,6 +77,7 @@ subplot(2, 1, 1)
 plot(error_x)
 yline(0,"-r")
 yline(10,"-g")
+ylim([-10 50])
 grid on
 title('Error X')
 
