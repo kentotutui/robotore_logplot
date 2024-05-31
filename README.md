@@ -14,8 +14,8 @@
 xy座標のError
 <img width="960" alt="xyError" src="https://github.com/kentotutui/robotore_logplot/assets/74086911/cba8b4db-4d5e-495e-8982-d9873fd87848">
 
-### VLT_log.txt
-ログのデータを[VLT_log.txt](https://github.com/kentotutui/robotore_logplot/blob/master/VLT_log.txt)に保存してください。
+### log_data.txt
+ログのデータを[log_data.txt]()に保存してください。
 
 例として現在開発中の機体[TLR2](https://www.ntf.or.jp/mouse/micromouse2023/Robot/AllJapan/TechRT63.html)の走行ログを入れてあります。
 
@@ -28,6 +28,3 @@ xy座標のError
 
 ### Distance, Theta.txt
 [plot_log.m](https://github.com/kentotutui/robotore_logplot/blob/master/plot_log.m)にプロットするときに参照するテキストファイルです。
-
-### log_data.txt
-シリアルでログを読みだしたときにデータが入るためのファイル
