@@ -28,3 +28,4 @@ xy座標のError
 
 ### Distance, Theta.txt
 [plot_log.m](https://github.com/kentotutui/robotore_logplot/blob/master/plot_log.m)にプロットするときに参照するテキストファイルです。
+データの種類は、距離(mm),車体角速度(rad/s)です。
