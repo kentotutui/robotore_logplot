@@ -1,4 +1,4 @@
-data = load("VLT_log.txt");
+data = load("log_data.txt");
 target_x_point = data(:, 1);%目標x座標
 target_y_point = data(:, 2);%目標y座標
 theta_10mm = data(:, 3);%目標車体角速度
@@ -77,7 +77,7 @@ subplot(2, 1, 1)
 plot(error_x)
 yline(0,"-r")
 yline(10,"-g")
-ylim([-10 50])
+%ylim([-10 50])
 grid on
 title('Error X')
 
