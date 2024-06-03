@@ -10,8 +10,8 @@ error_y = data(:, 8);%y座標の誤差
 error_theta = data(:, 9);%車体角速度の誤差
 target_velocity = data(:, 10);%目標並進速度
 target_angularvelocity = data(:, 11);%目標車体角速度
-current_velociy = data(:, 12);%現在速度
-current_angularvelocity = data(:, 13);%現在角速度
+now_velociy = data(:, 12);%現在速度
+now_angularvelocity = data(:, 13);%現在角速度
 
 % データが有るところだけ抽出
 target_x_point = nonzeros(target_x_point);
@@ -52,25 +52,25 @@ yline(0,"-r")
 grid on
 grid minor
 axis equal
-legend('Target Point (red)', 'Current Point (blue)')
+legend('Target Point (red)', 'Now Point (blue)')
 
 figure(2);%速度・角速度の差をプロット
 subplot(2, 1, 1)
 plot(target_velocity, 'color', 'red')
 hold on
-plot(current_velociy, 'color', 'blue')
+plot(now_velociy, 'color', 'blue')
 grid on
 title('Velocity(m/s)')
-legend('Target Velocity (red)', 'Current Velocity (blue)')
+legend('Target Velocity (red)', 'Now Velocity (blue)')
 
 subplot(2, 1, 2)
 plot(target_angularvelocity, 'color', 'red')
 hold on
-plot(current_angularvelocity, 'color', 'blue')
+plot(now_angularvelocity, 'color', 'blue')
 yline(0,"-g")
 grid on
 title('AngularVelocity(rad/s)')
-legend('Target Angularvelocity (red)', 'Current Angularvelocity (blue)')
+legend('Target Angularvelocity (red)', 'Now Angularvelocity (blue)')
 
 figure(3);%Error分を出力
 subplot(2, 1, 1)
