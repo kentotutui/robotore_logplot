@@ -23,9 +23,6 @@ xy座標のError
 
 目標x座標・目標y座標・目標車体角速度(絶対座標系)(rad/s)・現在x座標・現在y座標・現在車体角速度(rad/s)・x座標誤差・y座標誤差・車体角速度誤差(rad/s)・目標速度(m/s)・目標車体角速度(ローカル座標系)(rad/s)・現在速度(m/s)・現在車体角速度(rad/s)
 
-### plot_log.m
-コース図を10mmごとの距離・角速度からプロットするプログラムです。主にログが正しく取れているかを確認するときに使います。
-
 ### Distance, Theta.txt
 [plot_log.m](https://github.com/kentotutui/robotore_logplot/blob/master/plot_log.m)にプロットするときに参照するテキストファイルです。
 データの種類は、距離(mm),車体角速度(rad/s)です。

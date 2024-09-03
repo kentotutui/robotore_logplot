@@ -1,4 +1,5 @@
 data = load("log_data.txt");
+data2 = load("Distance, Theta.txt");
 target_x_point = data(:, 1);%目標x座標
 target_y_point = data(:, 2);%目標y座標
 theta_10mm = data(:, 3);%目標車体角速度
@@ -13,24 +14,41 @@ target_angularvelocity = data(:, 11);%目標車体角速度
 now_velociy = data(:, 12);%現在速度
 now_angularvelocity = data(:, 13);%現在角速度
 
+distance_30mm = data2(:, 1);%30mmごとの距離
+theta_30mm = data2(:, 2);%30mmごとの角速度
+
 % データが有るところだけ抽出
 target_x_point = nonzeros(target_x_point);
 target_y_point = target_y_point(1:size(target_x_point));
 now_x_point = nonzeros(now_x_point);
 now_y_point = now_y_point(1:size(now_x_point));
 
-theta_adj = target_y_point .* 1;
+theta_adj = theta_30mm .* 1;
 
+x = 0;
+y = 0;
+th = 0;
 x_r = 0;
 y_r = 0;
 x_c = 0;
 y_c = 0;
 th = 0;
 
+X = [];
+Y = [];
 X_R = [];
 Y_R = [];
 X_C = [];
 Y_C = [];
+
+for i = 1:size(distance_30mm)
+    x = x + distance_30mm(i) * cos(th + theta_adj(i)/2);
+    y = y + distance_30mm(i) * sin(th + theta_adj(i)/2);
+    th = th + theta_adj(i);
+    X = [X x];
+    Y = [Y y];
+end
+
 for i = 1:size(target_x_point)
     x_r = target_x_point(i);
     y_r = target_y_point(i);
@@ -43,16 +61,18 @@ for i = 1:size(target_x_point)
 end
 
 figure(1);%コースxy座標をプロット
-scatter(X_R, Y_R, 'red')
+scatter(X, Y, 'red')
 hold on
-scatter(X_C, Y_C, 'blue')
+scatter(X_R, Y_R, 'blue')
+hold on
+scatter(X_C, Y_C, 'green')
 xline(0,"-r")
 xline(-1000,"-r")
 yline(0,"-r")
 grid on
 grid minor
 axis equal
-legend('Target Point (red)', 'Now Point (blue)')
+legend('Original Point (red)', 'Target Point (blue)', 'Now Point (green)')
 
 figure(2);%速度・角速度の差をプロット
 subplot(2, 1, 1)
